@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "499421931581",
+    "project_id": "rnfirebase-d6b7a",
+    "storage_bucket": "rnfirebase-d6b7a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:499421931581:android:716b924849df3aacf6a254",
+        "android_client_info": {
+          "package_name": "com.testredux"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "499421931581-8a9thftdegi8drkb0cfr3162aq1dhipb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB91R8a0Wr2WrRbV8QMZJT_7n-xbLT0K6k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "499421931581-8a9thftdegi8drkb0cfr3162aq1dhipb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
