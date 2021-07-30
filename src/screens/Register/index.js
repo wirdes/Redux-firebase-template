@@ -40,7 +40,6 @@ const Register = props => {
           source={require('../../assets/image/valorant.png')}
           style={loginStyle.logo}
         />
-        {/* <Text style={{fontSize: 65}}>LOGO</Text> */}
       </View>
       <View style={loginStyle.container}>
         <TextInput
@@ -79,7 +78,7 @@ const Register = props => {
           <Text style={loginStyle.text}>Kayıt Ol</Text>
         </TouchableOpacity>
       </View>
-      <View style={loginStyle.block}></View>
+      <View style={loginStyle.block} />
     </>
   );
 };

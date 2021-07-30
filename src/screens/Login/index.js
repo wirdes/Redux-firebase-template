@@ -61,7 +61,7 @@ const Login = props => {
           onChangeText={d => setPassword(d)}
         />
         <TouchableOpacity onPress={login} style={loginStyle.button}>
-          <Text style={loginStyle.text}>Giriş Yap ✔</Text>
+          <Text style={loginStyle.text}>Giriş Yap</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
