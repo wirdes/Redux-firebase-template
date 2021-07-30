@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   pageName: {flex: 1},
   block: {flex: 9, justifyContent: 'space-evenly', alignItems: 'center'},
   button: {
-    padding: 25,
+    padding: 10,
     backgroundColor: 'rgb(255, 67, 80)',
     borderRadius: 55,
   },
