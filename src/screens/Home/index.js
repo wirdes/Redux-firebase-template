@@ -6,18 +6,9 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import {AppStyles} from '../AppStyles';
 const Tab = createBottomTabNavigator();
 
-import Upload from './Upload';
-import Profile from './Profile';
-
-const HomeScreen = props => {
-  const {userData} = useSelector(state => state.auth);
-  return (
-    <View>
-      <Text>Home Screen</Text>
-      <Text>{userData.email}</Text>
-    </View>
-  );
-};
+import Upload from './UploadScreen';
+import Profile from './ProfileScreen';
+import HomeScreen from './HomeScreen';
 
 const Home = () => {
   return (
@@ -67,6 +58,5 @@ const Home = () => {
     </Tab.Navigator>
   );
 };
-
 
 export default Home;
