@@ -24,11 +24,10 @@ const Login = props => {
       Toast.show({
         type: 'error',
         text1: 'Hata',
-        text2: `${error.message} 👋`,
+        text2: `${error.message} ☠️`,
       });
     }
   };
-  //console.log(`${error} ${userData.email} ${isLoggedIn}`);
 
   return (
     <>
@@ -40,7 +39,6 @@ const Login = props => {
           source={require('../../assets/image/valorant.png')}
           style={loginStyle.logo}
         />
-        {/* <Text style={{fontSize: 65}}>LOGO</Text> */}
       </View>
       <View style={loginStyle.container}>
         <TextInput
