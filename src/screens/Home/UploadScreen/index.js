@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import {launchImageLibrary} from 'react-native-image-picker';
 import {TouchableOpacity, View, Image, Text} from 'react-native';
 import Toast from 'react-native-toast-message';
-import {loginStyle} from '../../AppStyles';
+import {loginStyle, AppStyles} from '../../AppStyles';
 import {useSelector} from 'react-redux';
 import storage from '@react-native-firebase/storage';
 import database from '@react-native-firebase/database';
@@ -63,18 +63,30 @@ const Upload = () => {
 
   const send = async () => {
     const fileRef = `images/${userData.userId}---${getTime()}.jpg`;
+    const postRef = 'posts/' + getTime();
     const reference = storage().ref(fileRef);
     await reference.putFile(imageUri.uri);
     const url = await storage().ref(fileRef).getDownloadURL();
-    database().ref('posts/').set({
-      ownerId: userData.userId,
-      url,
-    });
+    try {
+      await database().ref(postRef).set({owner: userData.userId, url});
+      setHasImage(false);
+      Toast.show({
+        type: 'success',
+        text1: 'Başarılı',
+        text2: 'Resim başarıyla yüklendi',
+      });
+    } catch (e) {
+      Toast.show({
+        type: 'error',
+        text1: 'Uyarı',
+        text2: 'Resim yüklenemedi',
+      });
+    }
   };
 
   return (
     <View style={loginStyle.container}>
-      <View style={{flex: 1}}>
+      <View style={{flex: 3, width: AppStyles.width}}>
         <Toast ref={ref => Toast.setRef(ref)} />
       </View>
       <View style={{flex: 2}}>

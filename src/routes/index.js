@@ -12,10 +12,9 @@ const Stack = createStackNavigator();
 
 const Navigation = () => {
   const dispatch = useDispatch();
-  const {isLoading, isLoggedIn, userData} = useSelector(state => state.auth);
+  const {isLoggedIn} = useSelector(state => state.auth);
 
   useEffect(() => {
-    console.log(userData);
     dispatch(authUser());
   }, []);
 

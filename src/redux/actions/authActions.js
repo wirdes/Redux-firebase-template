@@ -94,13 +94,10 @@ export const logoutUser = () => {
   return async dispatch => {
     dispatch({type: types.LOGOUT_INIT});
     try {
-      console.log('1');
       await auth().signOut();
     } catch (error) {
-      console.log('2');
       return dispatch({type: types.LOGOUT_FAIL, payload: error});
     }
-    console.log('3');
     return dispatch({type: types.LOGOUT_SUCCESS});
   };
 };
@@ -110,17 +107,8 @@ export const authUser = () => {
     dispatch({type: types.AUTH_INIT});
     try {
       await auth().onAuthStateChanged(user => {
-        console.log(user);
         if (user) {
           return dispatch({type: types.AUTH_SUCCESS, payload: user});
-        } else {
-          return dispatch({
-            type: types.AUTH_FAIL,
-            payload: {
-              type: 'auth/user-not-login',
-              message: 'Lütfen giriş yapınız',
-            },
-          });
         }
       });
     } catch (error) {

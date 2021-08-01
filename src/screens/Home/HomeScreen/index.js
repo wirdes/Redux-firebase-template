@@ -1,22 +1,18 @@
-import React, {useEffect} from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {View, Text, Image, FlatList} from 'react-native';
 import database from '@react-native-firebase/database';
 
 const HomeScreen = () => {
-  const userId = '123';
-  const aad = () => {
-    database()
-      .ref('users/' + userId)
-      .set({
-        userId: userId,
-      });
+  const [data, setData] = useState();
+  const func = async () => {
+    const onValueChange = await database().ref(`/posts`).once('value');
+    setData(onValueChange);
+    console.log(data);
   };
+  // useEffect(() => func());
   return (
     <View style={{flex: 1, alignItems: 'center'}}>
-      <Text style={{fontSize: 52}}>Home Screen</Text>
-      <TouchableOpacity onPress={aad}>
-        <Text>Mert</Text>
-      </TouchableOpacity>
+      <Text style={{fontSize: 52}}>{'owner'}</Text>
     </View>
   );
 };

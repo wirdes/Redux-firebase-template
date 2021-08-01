@@ -100,7 +100,7 @@ export default function auth(state = INITIAL_STATE, action) {
         error: action.error,
       };
 
-    case types.LOGIN_SUCCESS:
+    case types.LOGOUT_SUCCESS:
       return {
         ...state,
         isLoading: false,
