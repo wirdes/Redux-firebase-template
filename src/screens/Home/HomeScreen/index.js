@@ -9,7 +9,7 @@ const HomeScreen = () => {
     setData(onValueChange);
     console.log(data);
   };
-  // useEffect(() => func());
+  //useEffect(() => func());
   return (
     <View style={{flex: 1, alignItems: 'center'}}>
       <Text style={{fontSize: 52}}>{'owner'}</Text>
