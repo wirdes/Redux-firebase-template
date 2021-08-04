@@ -68,7 +68,7 @@ const Upload = () => {
     await reference.putFile(imageUri.uri);
     const url = await storage().ref(fileRef).getDownloadURL();
     try {
-      await database().ref(postRef).set({owner: userData.userId, url});
+      await database().ref(postRef).set({owner: userData.email  , url});
       setHasImage(false);
       Toast.show({
         type: 'success',
