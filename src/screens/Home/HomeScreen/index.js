@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {View, Text, Image, FlatList, StyleSheet} from 'react-native';
 import database from '@react-native-firebase/database';
 import {SearchBar} from 'react-native-elements';
-import Posts from '../../../components/Posts';
+import {Posts} from '../../../components/Posts';
 
 const HomeScreen = () => {
   const renderItem = ({item}) => <Posts url={item.url} owner={item.owner} />;
